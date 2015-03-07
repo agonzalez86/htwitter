@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
 	def create
 		@tweet = Tweet.new(tweet_params)
 		@tweet.save
+			flash[:success] = "You have created a tweet"
 		render 'new'
 	end
 
