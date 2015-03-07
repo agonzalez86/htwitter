@@ -7,7 +7,11 @@ class TweetsController < ApplicationController
 		@tweet = Tweet.new(tweet_params)
 		@tweet.save
 			flash[:success] = "You have created a tweet"
-		render 'new'
+			redirect_to new_tweet_path
+	end
+
+	def index
+		@tweets = Tweet.all
 	end
 
 	def tweet_params
