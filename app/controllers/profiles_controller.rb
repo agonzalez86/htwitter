@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+	before_action :authenticate_user!
+	
 	def new
 		@profile = Profile.new
 	end
@@ -12,6 +14,9 @@ class ProfilesController < ApplicationController
 			else 
 				render 'new'
 			end
+	end
+	def show
+		@profile = Profile.find(params[:id])
 	end
 
 	def profile_params
