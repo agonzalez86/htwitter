@@ -58,5 +58,6 @@ end
 
 group :production do
 	gem 'pg'
-	gem 'rails_12factor', '0.0.2'
+
+	gem 'rails_12factor', group: product
 end
